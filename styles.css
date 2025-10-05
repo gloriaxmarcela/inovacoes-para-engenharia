@@ -1,21 +1,20 @@
+/* === TEMA FUTURISTA / TECNOLÓGICO === */
+
 /* --- CONFIGURAÇÕES GERAIS E PALETA DE CORES --- */
 :root {
-    --color-primary: #5e17eb;
-    --color-secondary: #2575fc;
-    --color-background: #f4f7fc;
-    --color-card-white: #ffffff;
-    --color-text: #212529;
-    --color-text-light: #495057;
-    --color-border: #dee2e6;
-    --shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
-    --swot-green: #198754;
-    --swot-orange: #fd7e14;
-    --swot-blue: #0d6efd;
-    --swot-red: #dc3545;
+    --color-background: #1e1e2f; /* Cinza-azulado escuro */
+    --color-card: #27293d; /* Fundo das caixas */
+    --color-primary: #9d50bb; /* Lilás/Roxo principal */
+    --color-secondary: #6e48aa; /* Roxo secundário */
+    --color-text: #e0e0e0; /* Texto principal (cinza claro) */
+    --color-text-header: #ffffff; /* Texto dos títulos */
+    --color-border: rgba(157, 80, 187, 0.2); /* Borda lilás sutil */
+    --glow-effect: 0 0 20px rgba(157, 80, 187, 0.15);
     
-    /* Cores específicas do projeto Postes */
-    --postes-primary: #00695c;
-    --postes-secondary: #00bcd4;
+    --swot-green: #00f2a1; /* Verde neon */
+    --swot-orange: #ff9f43; /* Laranja vibrante */
+    --swot-blue: #0abde3; /* Azul ciano */
+    --swot-red: #ff4d4d; /* Vermelho claro */
 }
 
 body {
@@ -27,7 +26,7 @@ body {
     line-height: 1.7;
 }
 
-/* --- ESTRUTURA PRINCIPAL (USADO EM TODAS AS PÁGINAS) --- */
+/* --- ESTRUTURA PRINCIPAL --- */
 .container {
     max-width: 1100px;
     margin: 40px auto;
@@ -38,7 +37,7 @@ body {
     font-size: 3em;
     font-weight: 700;
     text-align: center;
-    background: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
+    background: linear-gradient(45deg, var(--color-primary), var(--swot-blue));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 50px;
@@ -48,23 +47,25 @@ body {
     text-align: center;
     font-size: 1.2em;
     font-weight: 300;
-    color: var(--color-text-light);
+    color: #a0a0c0;
     margin-top: -40px;
     margin-bottom: 50px;
 }
 
 /* --- SEÇÕES DE CONTEÚDO --- */
 .content-section {
+    background-color: var(--color-card);
+    border: 1px solid var(--color-border);
     border-radius: 12px;
     padding: 30px 40px;
     margin-bottom: 30px;
-    box-shadow: var(--shadow);
+    box-shadow: var(--glow-effect);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .content-section:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 30px rgba(157, 80, 187, 0.25);
 }
 
 .content-section h2 {
@@ -72,7 +73,8 @@ body {
     font-weight: 600;
     margin-top: 0;
     padding-bottom: 10px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-text-header);
 }
 
 .content-section h3 {
@@ -85,72 +87,47 @@ body {
 .content-section h4 {
     font-size: 1.1em;
     font-weight: 600;
-    color: var(--color-text);
+    color: var(--color-text-header);
     margin-top: 20px;
     margin-bottom: 10px;
 }
 
-/* CAIXINHAS COLORIDAS E BRANCAS (INDEX) */
-#disciplina { background-color: #e0f7fa; color: #004d40; }
-#disciplina h2 { color: #004d40; border-color: rgba(0, 77, 64, 0.2); }
-
-#creditos { background-color: #f3e8ff; color: #4a148c; }
-#creditos h2 { color: #4a148c; border-color: rgba(74, 20, 140, 0.2); }
-#creditos h4 { color: #4a148c; }
-
-#projetos, #votacao-equipe { background-color: var(--color-card-white); }
-#projetos h2, #votacao-equipe h2 { color: var(--color-primary); border-color: var(--color-border); }
-
-/* SEÇÃO DE CRÉDITOS */
-.credits-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-}
-.credits-grid p { margin-bottom: 0; }
-.team-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px; }
-.team-list li { padding: 8px 12px; background-color: rgba(255, 255, 255, 0.5); border-radius: 8px; font-weight: 500; }
-
-
-/* SEÇÕES DAS PÁGINAS DE PROJETO */
-#resumo { background-color: #f3e8ff; color: #4a148c; border-bottom: 3px solid #d8b2ff; }
-#resumo h2 { color: #4a148c; border-color: rgba(74, 20, 140, 0.2); }
+/* CAIXAS ESPECÍFICAS (INDEX) */
+#disciplina, #creditos { background-color: transparent; border-style: dashed;}
+#projetos, #votacao-equipe { background-color: var(--color-card); }
 
 .three-column-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 30px; }
 .three-column-grid .content-section { margin-bottom: 0; }
+#objetivo, #justificativa, #publico-alvo { background-color: var(--color-card); }
 
-#objetivo { background-color: #e0f7fa; color: #004d40; border-bottom: 3px solid #b2ebf2; }
-#objetivo h2 { color: #004d40; border-color: rgba(0, 77, 64, 0.2); }
-#justificativa { background-color: #e8eaf6; color: #1a237e; border-bottom: 3px solid #c5cae9; }
-#justificativa h2 { color: #1a237e; border-color: rgba(26, 35, 126, 0.2); }
-#publico-alvo { background-color: #fce4ec; color: #880e4f; border-bottom: 3px solid #f8bbd0; }
-#publico-alvo h2 { color: #880e4f; border-color: rgba(136, 14, 79, 0.2); }
+/* SEÇÃO DE CRÉDITOS */
+.credits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+.team-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.team-list li { padding: 8px 12px; background-color: rgba(0, 0, 0, 0.2); border-radius: 8px; font-weight: 500; }
 
-#solucao, #componentes, #parcerias, #impacto, #passos, #analise-estrategica { background-color: var(--color-card-white); }
-#solucao h2, #componentes h2, #parcerias h2, #impacto h2, #passos h2, #analise-estrategica h2 { color: var(--color-primary); border-color: var(--color-border); }
-
-/* --- TABELAS, LISTAS, ETC --- */
+/* --- TABELAS --- */
 .components-table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 0.95em; }
 .components-table th, .components-table td { padding: 12px 15px; text-align: left; border-bottom: 1px solid var(--color-border); }
-.components-table thead { background-color: var(--color-primary); color: white; font-weight: 600; }
-.components-table tbody tr:nth-child(even) { background-color: #f8f9fa; }
-.components-table tbody tr:hover { background-color: #f1f3f5; }
+.components-table thead { background: linear-gradient(45deg, var(--color-primary), var(--color-secondary)); color: white; font-weight: 600; }
+.components-table tbody tr { transition: background-color 0.2s ease; }
+.components-table tbody tr:nth-child(even) { background-color: rgba(0, 0, 0, 0.1); }
+.components-table tbody tr:hover { background-color: rgba(157, 80, 187, 0.1); }
+
+/* --- LISTAS --- */
 .content-section ul, .content-section ol { list-style: none; padding-left: 0; }
 .content-section ul li, .content-section ol li { position: relative; padding-left: 25px; margin-bottom: 10px; }
-.content-section ul li::before { content: '›'; position: absolute; left: 0; font-size: 1.5em; line-height: 1; color: var(--color-secondary); }
-.content-section ol li { counter-increment: list-counter; }
-.content-section ol li::before { content: counter(list-counter); position: absolute; left: -5px; font-weight: 600; color: var(--color-card-white); background-color: var(--color-secondary); border-radius: 50%; width: 25px; height: 25px; text-align: center; line-height: 25px; font-size: 0.9em; }
+.content-section ul li::before { content: '›'; position: absolute; left: 0; font-size: 1.5em; line-height: 1; color: var(--color-primary); }
+.content-section ol li::before { content: counter(list-counter); position: absolute; left: -5px; font-weight: 600; color: var(--color-text-header); background-color: var(--color-primary); border-radius: 50%; width: 25px; height: 25px; text-align: center; line-height: 25px; font-size: 0.9em; }
 
-/* --- SEÇÃO E MATRIZ SWOT --- */
-#swot-analysis { padding: 20px 0; background-color: transparent; box-shadow: none;}
-#swot-analysis h2 { text-align: center; font-size: 2.2em; margin-bottom: 40px; color: #333; }
+/* --- MATRIZ SWOT --- */
+#swot-analysis { padding: 20px 0; background: none; box-shadow: none; border: none; }
+#swot-analysis h2 { text-align: center; font-size: 2.2em; margin-bottom: 40px; color: var(--color-text-header); }
 .swot-quadrant-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; max-width: 900px; margin: auto; }
-.swot-card { background-color: var(--color-card-white); border-radius: 12px; padding: 25px 30px; box-shadow: var(--shadow); border: 1px solid var(--color-border); transition: transform 0.3s ease, box-shadow 0.3s ease; }
-.swot-card:hover { transform: translateY(-5px); box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); }
+.swot-card { background-color: var(--color-card); border-radius: 12px; padding: 25px 30px; box-shadow: none; border: 1px solid var(--color-border); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.swot-card:hover { transform: translateY(-5px); box-shadow: var(--glow-effect); }
 .swot-card h3 { margin: 0 0 15px 0; font-size: 1.5em; font-weight: 600; display: flex; align-items: center; padding-bottom: 15px; border-bottom: 2px solid; }
-.swot-card ul { padding-left: 5px; margin: 0; color: var(--color-text-light); }
-.swot-card ul li { padding-left: 22px; margin-bottom: 12px; font-size: 0.95em; }
-.swot-card ul li::before { content: ''; position: absolute; left: 0; top: 10px; width: 8px; height: 8px; border-radius: 50%; }
+.swot-card ul { padding-left: 5px; margin: 0; }
+.swot-card ul li::before { content: ''; position: absolute; left: 0; top: 10px; width: 8px; height: 8px; border-radius: 2px; } /* Quadrado para um look mais tech */
 .swot-strengths h3 { color: var(--swot-green); border-color: var(--swot-green); }
 .swot-strengths ul li::before { background-color: var(--swot-green); }
 .swot-weaknesses h3 { color: var(--swot-orange); border-color: var(--swot-orange); }
@@ -160,42 +137,39 @@ body {
 .swot-threats h3 { color: var(--swot-red); border-color: var(--swot-red); }
 .swot-threats ul li::before { background-color: var(--swot-red); }
 
-/* --- SISTEMA DE VOTAÇÃO DA EQUIPE --- */
+/* --- SISTEMA DE VOTAÇÃO --- */
 .voting-container { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; margin-top: 20px; }
-.vote-box, .results-box { padding: 30px; border-radius: 12px; box-shadow: var(--shadow); }
-.vote-box { background-color: var(--color-card-white); }
-.results-box { background-color: #f8f9fa; border-left: 4px solid var(--color-primary); }
-.vote-box h3, .results-box h3 { margin-top: 0; font-weight: 600; color: var(--color-primary); }
-#vote-form label { display: block; font-weight: 500; margin-bottom: 8px; }
-#vote-form select { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--color-border); font-family: 'Poppins', sans-serif; font-size: 1em; margin-bottom: 20px; }
-#project-choices.hidden { display: none; }
-.choice-group { display: flex; align-items: center; margin-bottom: 15px; }
-.choice-group input[type="checkbox"] { margin-right: 10px; width: 20px; height: 20px; cursor: pointer; }
-.choice-group label { font-size: 1.1em; font-weight: 500; cursor: pointer; }
-.button-group { margin-top: 25px; display: flex; gap: 15px; }
-#submit-vote-btn, #cancel-vote-btn { flex-grow: 1; padding: 12px; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.2s ease; }
-#submit-vote-btn { background-color: var(--swot-green); color: white; }
-#cancel-vote-btn { background-color: #6c757d; color: white; }
-#submit-vote-btn:hover { opacity: 0.9; }
-#cancel-vote-btn:hover { background-color: #5a6268; }
-.results-display .result-item { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid var(--color-border); }
-.results-display .result-item:last-child { border-bottom: none; }
-.result-item .project-name { font-weight: 500; }
-.result-item .vote-counter { font-weight: 600; font-size: 1.1em; background-color: var(--color-primary); color: white; padding: 5px 12px; border-radius: 20px; }
-#votos-restantes { text-align: center; margin-top: 20px; font-size: 1.1em; }
+.vote-box, .results-box { padding: 30px; border-radius: 12px; background-color: var(--color-card); border: 1px solid var(--color-border); }
+.results-box { background-color: rgba(0,0,0,0.1); }
+#vote-form select { background-color: var(--color-background); border: 1px solid var(--color-border); color: var(--color-text); width: 100%; padding: 12px; border-radius: 8px; font-family: 'Poppins', sans-serif; font-size: 1em; margin-bottom: 20px; }
+.choice-group input[type="checkbox"] { filter: hue-rotate(60deg) brightness(1.5); }
+.choice-group label { transition: color 0.2s ease; }
+.choice-group input[type="checkbox"]:checked + label { color: var(--color-primary); font-weight: 600; }
+.result-item .vote-counter { font-weight: 600; font-size: 1.1em; background: linear-gradient(45deg, var(--color-primary), var(--color-secondary)); color: white; padding: 5px 12px; border-radius: 20px; }
 
-/* MENU DE PROJETOS */
-#projetos { background-color: transparent; box-shadow: none; }
+/* --- BOTÕES --- */
+.btn-details, #submit-vote-btn, #cancel-vote-btn {
+    padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; cursor: pointer; border: 2px solid var(--color-primary); background-color: transparent; color: var(--color-primary);
+}
+.btn-details:hover, #submit-vote-btn:hover, #cancel-vote-btn:hover {
+    background-color: var(--color-primary); color: white; box-shadow: 0 0 15px var(--color-primary);
+}
+#cancel-vote-btn { border-color: #6c757d; color: #6c757d; }
+#cancel-vote-btn:hover { background-color: #6c757d; color: white; box-shadow: 0 0 15px #6c757d; }
+
+.button-group { margin-top: 25px; display: flex; gap: 15px; }
+#submit-vote-btn, #cancel-vote-btn { flex-grow: 1; }
+
 .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 20px; }
-.project-card { background-color: var(--color-card-white); border-radius: 12px; box-shadow: var(--shadow); padding: 25px 30px; display: flex; flex-direction: column; text-align: center; border-top: 4px solid var(--color-primary); }
-.project-card h3 { font-size: 1.6em; font-weight: 600; color: var(--color-primary); margin-top: 0; }
-.btn-details { display: block; width: 100%; text-align: center; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; background-color: var(--color-card-white); color: var(--color-primary); border: 2px solid var(--color-primary); margin-top: auto; }
-.btn-details:hover { background-color: var(--color-primary); color: white; }
+.project-card { background-color: var(--color-card); border-radius: 12px; box-shadow: var(--glow-effect); padding: 25px 30px; display: flex; flex-direction: column; text-align: center; border: 1px solid var(--color-border); }
+.project-card h3 { color: var(--color-text-header); }
+.btn-details { margin-top: auto; }
 
 /* Responsividade */
-@media (max-width: 900px) {
-    .voting-container { grid-template-columns: 1fr; }
-}
-@media (max-width: 768px) {
-    .credits-grid { grid-template-columns: 1fr; }
-}
+@media (max-width: 900px) { .voting-container { grid-template-columns: 1fr; } }
+@media (max-width: 768px) { .credits-grid { grid-template-columns: 1fr; } }
+
+/* Outros estilos do index que não foram sobrescritos */
+#projetos { background-color: transparent; box-shadow: none; border: none; }
+#disciplina h2, #creditos h2, #votacao-equipe h2, #projetos h2 { color: var(--color-text-header); text-align: center; }
+.team-list li { color: var(--color-text) }
