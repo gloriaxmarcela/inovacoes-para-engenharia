@@ -53,7 +53,7 @@ body {
     margin-bottom: 50px;
 }
 
-/* --- ESTILOS DAS PÁGINAS DE PROJETO (EYEGUARD, POSTES, ETC.) --- */
+/* --- SEÇÕES DE CONTEÚDO --- */
 .content-section {
     border-radius: 12px;
     padding: 30px 40px;
@@ -90,7 +90,29 @@ body {
     margin-bottom: 10px;
 }
 
-/* Caixinhas coloridas */
+/* CAIXINHAS COLORIDAS E BRANCAS (INDEX) */
+#disciplina { background-color: #e0f7fa; color: #004d40; }
+#disciplina h2 { color: #004d40; border-color: rgba(0, 77, 64, 0.2); }
+
+#creditos { background-color: #f3e8ff; color: #4a148c; }
+#creditos h2 { color: #4a148c; border-color: rgba(74, 20, 140, 0.2); }
+#creditos h4 { color: #4a148c; }
+
+#projetos, #votacao-equipe { background-color: var(--color-card-white); }
+#projetos h2, #votacao-equipe h2 { color: var(--color-primary); border-color: var(--color-border); }
+
+/* SEÇÃO DE CRÉDITOS */
+.credits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+.credits-grid p { margin-bottom: 0; }
+.team-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.team-list li { padding: 8px 12px; background-color: rgba(255, 255, 255, 0.5); border-radius: 8px; font-weight: 500; }
+
+
+/* SEÇÕES DAS PÁGINAS DE PROJETO */
 #resumo { background-color: #f3e8ff; color: #4a148c; border-bottom: 3px solid #d8b2ff; }
 #resumo h2 { color: #4a148c; border-color: rgba(74, 20, 140, 0.2); }
 
@@ -107,20 +129,20 @@ body {
 #solucao, #componentes, #parcerias, #impacto, #passos, #analise-estrategica { background-color: var(--color-card-white); }
 #solucao h2, #componentes h2, #parcerias h2, #impacto h2, #passos h2, #analise-estrategica h2 { color: var(--color-primary); border-color: var(--color-border); }
 
+/* --- TABELAS, LISTAS, ETC --- */
 .components-table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 0.95em; }
 .components-table th, .components-table td { padding: 12px 15px; text-align: left; border-bottom: 1px solid var(--color-border); }
 .components-table thead { background-color: var(--color-primary); color: white; font-weight: 600; }
 .components-table tbody tr:nth-child(even) { background-color: #f8f9fa; }
 .components-table tbody tr:hover { background-color: #f1f3f5; }
-
 .content-section ul, .content-section ol { list-style: none; padding-left: 0; }
 .content-section ul li, .content-section ol li { position: relative; padding-left: 25px; margin-bottom: 10px; }
 .content-section ul li::before { content: '›'; position: absolute; left: 0; font-size: 1.5em; line-height: 1; color: var(--color-secondary); }
 .content-section ol li { counter-increment: list-counter; }
 .content-section ol li::before { content: counter(list-counter); position: absolute; left: -5px; font-weight: 600; color: var(--color-card-white); background-color: var(--color-secondary); border-radius: 50%; width: 25px; height: 25px; text-align: center; line-height: 25px; font-size: 0.9em; }
 
-/* Matriz SWOT */
-#swot-analysis { padding: 20px 0; }
+/* --- SEÇÃO E MATRIZ SWOT --- */
+#swot-analysis { padding: 20px 0; background-color: transparent; box-shadow: none;}
 #swot-analysis h2 { text-align: center; font-size: 2.2em; margin-bottom: 40px; color: #333; }
 .swot-quadrant-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; max-width: 900px; margin: auto; }
 .swot-card { background-color: var(--color-card-white); border-radius: 12px; padding: 25px 30px; box-shadow: var(--shadow); border: 1px solid var(--color-border); transition: transform 0.3s ease, box-shadow 0.3s ease; }
@@ -138,16 +160,7 @@ body {
 .swot-threats h3 { color: var(--swot-red); border-color: var(--swot-red); }
 .swot-threats ul li::before { background-color: var(--swot-red); }
 
-/* --- ESTILOS ESPECÍFICOS DA PÁGINA INDEX --- */
-#disciplina, #integrantes { background-color: var(--color-card-white); }
-#disciplina h2, #integrantes h2 { color: var(--color-primary); }
-
-.team-list { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; text-align: center; }
-.team-list li { padding: 10px; background-color: #f8f9fa; border-radius: 8px; font-weight: 500; }
-
-#votacao-equipe { background-color: var(--color-card-white); }
-#votacao-equipe h2, #projetos h2 { text-align: center; color: var(--color-primary); }
-
+/* --- SISTEMA DE VOTAÇÃO DA EQUIPE --- */
 .voting-container { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; margin-top: 20px; }
 .vote-box, .results-box { padding: 30px; border-radius: 12px; box-shadow: var(--shadow); }
 .vote-box { background-color: var(--color-card-white); }
@@ -171,6 +184,7 @@ body {
 .result-item .vote-counter { font-weight: 600; font-size: 1.1em; background-color: var(--color-primary); color: white; padding: 5px 12px; border-radius: 20px; }
 #votos-restantes { text-align: center; margin-top: 20px; font-size: 1.1em; }
 
+/* MENU DE PROJETOS */
 #projetos { background-color: transparent; box-shadow: none; }
 .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 20px; }
 .project-card { background-color: var(--color-card-white); border-radius: 12px; box-shadow: var(--shadow); padding: 25px 30px; display: flex; flex-direction: column; text-align: center; border-top: 4px solid var(--color-primary); }
@@ -181,4 +195,7 @@ body {
 /* Responsividade */
 @media (max-width: 900px) {
     .voting-container { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+    .credits-grid { grid-template-columns: 1fr; }
 }
