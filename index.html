@@ -12,11 +12,18 @@
     <link rel="stylesheet" href="styles.css"> 
 </head>
 <body>
+
+    <header class="institutional-header">
+        <p><strong>Universidade Federal do ABC (UFABC)</strong></p>
+        <p>Centro de Engenharia, Modelagem e Ciências Sociais Aplicadas</p>
+        <p><strong>Disciplina:</strong> Inovações para Engenharia | <strong>Ano:</strong> 2025</p>
+        <p><strong>Professor:</strong> José Fernando Queiruga Rey</p>
+    </header>
+
     <div class="container">
         
         <header class="project-header">
             <h1>Propostas de Projeto</h1>
-            <p class="subtitle">Inovações para Engenharia (ESMA002-23)</p>
         </header>
 
         <main>
@@ -27,25 +34,16 @@
             
             <section id="creditos" class="content-section">
                 <h2>Créditos e Equipe</h2>
-                <div class="credits-grid">
-                    <div>
-                        <h4>Professor Responsável</h4>
-                        <p><strong>José Fernando Queiruga Rey</strong><br>
-                        Centro de Engenharia, Modelagem e Ciências Sociais Aplicadas</p>
-                    </div>
-                    <div>
-                        <h4>Equipe do Projeto</h4>
-                        <ul class="team-list">
-                            <li>Glória Marcela de Barros Moraes</li>
-                            <li>Nome do Integrante 2</li>
-                            <li>Nome do Integrante 3</li>
-                            <li>Nome do Integrante 4</li>
-                            <li>Nome do Integrante 5</li>
-                            <li>Nome do Integrante 6</li>
-                            <li>Nome do Integrante 7</li>
-                        </ul>
-                    </div>
-                </div>
+                 <h4>Equipe do Projeto</h4>
+                <ul class="team-list">
+                    <li>Glória Marcela de Barros Moraes</li>
+                    <li>Nome do Integrante 2</li>
+                    <li>Nome do Integrante 3</li>
+                    <li>Nome do Integrante 4</li>
+                    <li>Nome do Integrante 5</li>
+                    <li>Nome do Integrante 6</li>
+                    <li>Nome do Integrante 7</li>
+                </ul>
             </section>
             
             <section id="projetos" class="content-section">
@@ -71,7 +69,6 @@
                             <select id="integrante-select" required>
                                 <option value="">-- Escolha um integrante --</option>
                             </select>
-
                             <div id="project-choices" class="hidden">
                                 <p><strong>Selecione até 3 propostas:</strong></p>
                                 <div class="choice-group"><input type="checkbox" id="vote-eyeguard" name="projeto" value="eyeguard"><label for="vote-eyeguard">🛡️ Eyeguard</label></div>
@@ -84,7 +81,6 @@
                             </div>
                         </form>
                     </div>
-
                     <div class="results-box">
                         <h3>2. Resultados Atuais</h3>
                         <div class="results-display">
@@ -102,7 +98,6 @@
             </section>
         </main>
     </div>
-
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const TOTAL_INTEGRANTES = 7;
