@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Projeto Eyeguard – Análise Detalhada</title> 
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        
+        <header class="project-header">
+            <h1>🛡️ Projeto: Eyeguard</h1>
+        </header>
+
+        <main>
+            <section id="resumo" class="content-section">
+                <h2>📄 Resumo</h2>
+                <p>O Eyeguard é um dispositivo portátil projetado para proteger cidadãos em situações de risco. Ao ser ativado, inicia gravação com transmissão ao vivo, emite um alerta sonoro verbal e envia a localização GPS. O ecossistema Eyeguard é composto por três pilares: o **dispositivo vestível**, a **plataforma central** de dados e o **sistema de alerta comunitário**.</p>
+                <p>O projeto visa fortalecer a cidadania digital, ampliar a segurança e criar um efeito dissuasivo imediato contra a violência, integrando tecnologia, automação e impacto social.</p>
+            </section>
+
+            <div class="three-column-grid">
+                <section id="objetivo" class="content-section">
+                    <h2>🎯 Objetivo</h2>
+                    <ul>
+                        <li>Emitir alerta sonoro verbal dissuasivo.</li>
+                        <li>Iniciar gravação e transmissão ao vivo.</li>
+                        <li>Enviar localização GPS em tempo real.</li>
+                        <li>Acionar alerta comunitário em celulares.</li>
+                    </ul>
+                </section>
+
+                <section id="justificativa" class="content-section">
+                    <h2>🧩 Justificativa</h2>
+                    <p>Enfrentar abordagens truculentas em comunidades vulneráveis, somada à falta de ferramentas eficazes e discretas para registrar o ocorrido em tempo real e acionar uma rede de apoio de forma imediata e segura.</p>
+                </section>
+                
+                <section id="publico-alvo" class="content-section">
+                    <h2>👥 Público-Alvo</h2>
+                     <ul>
+                        <li>Moradores de comunidades periféricas.</li>
+                        <li>Ativistas de direitos humanos e ONGs (ex: Rede de Proteção).</li>
+                        <li>Advogados populares e defensores públicos.</li>
+                    </ul>
+                </section>
+            </div>
+            
+             <section id="solucao" class="content-section">
+                <h2>💡 4. Solução Proposta e Arquitetura Técnica</h2>
+                <p>O ecossistema Eyeguard se baseia em uma abordagem de **ativação híbrida**, projetada para oferecer confiabilidade máxima. A ativação não depende de um único método, mas de uma combinação de gatilhos manuais e automáticos.</p>
+
+                <h3>4.1. O Mecanismo de Ativação</h3>
+                <ol>
+                    <li>
+                        <strong>Ativação Manual Discreta (Gatilho Primário):</strong><br>
+                        Um botão físico silencioso, acionado por uma pressão longa (3s). É o método mais confiável, permitindo que o usuário tenha controle total e proativo.
+                    </li>
+                    <li>
+                        <strong>Ativação Automática por Gesto (Gatilho Secundário):</strong><br>
+                        Utilizando um sensor IMU, o dispositivo reconhece o gesto de "levantar os braços em rendição", servindo como uma redundância crucial caso a ativação manual não seja possível.
+                    </li>
+                    <li>
+                        <strong>Ativação Inteligente por IA (Pesquisa Futura):</strong><br>
+                        Em um estágio avançado, o dispositivo usaria IA embarcada (TinyML) para detectar padrões sonoros de risco (palavras-chave, tons de voz agressivos, sons de sirenes ou disparos).
+                    </li>
+                </ol>
+
+                <h3>Comparativo dos Métodos de Ativação</h3>
+                <table class="components-table">
+                    <thead><tr><th>Método de Ativação</th><th>Vantagens</th><th>Desvantagens / Desafios</th><th>Viabilidade no Protótipo</th></tr></thead>
+                    <tbody>
+                        <tr><td>Manual (Botão)</td><td>Máxima confiabilidade, zero falsos positivos, baixo consumo.</td><td>Requer ação consciente do usuário.</td><td style="font-weight: bold; color: var(--swot-green);">Alta (Essencial)</td></tr>
+                        <tr><td>Automático (Gesto)</td><td>Mãos-livres, intuitivo, baixo consumo, viável.</td><td>Risco de falsos positivos, requer uso no pulso/braço.</td><td style="font-weight: bold; color: var(--swot-green);">Alta (Recomendado)</td></tr>
+                        <tr><td>Inteligente (IA de Áudio)</td><td>Totalmente automático, detecta risco à distância.</td><td>Alto consumo de bateria, complexidade computacional.</td><td style="font-weight: bold; color: var(--swot-orange);">Baixa (Pesquisa Futura)</td></tr>
+                        <tr><td>Inteligente (IA de Vídeo)</td><td>Poderia reconhecer armas ou agressões.</td><td>Consumo de energia e processamento proibitivos.</td><td style="font-weight: bold; color: var(--swot-red);">Muito Baixa (Conceitual)</td></tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="componentes" class="content-section">
+                <h2>⚙️ 5. Componentes Técnicos (Revisado)</h2>
+                <table class="components-table">
+                    <thead><tr><th>Módulo</th><th>Tecnologia Sugerida</th><th>Função Estratégica</th></tr></thead>
+                    <tbody>
+                        <tr><td>Controle Central</td><td>Microcontrolador ESP32-S3</td><td>Gerencia todos os módulos com poder de processamento para futuras aplicações de IA.</td></tr>
+                        <tr><td>Ativação Primária</td><td>Botão Tátil Silencioso</td><td>Acionamento manual, discreto e confiável pelo usuário.</td></tr>
+                        <tr><td>Ativação Secundária</td><td>IMU (Ex: MPU-6050)</td><td>Detecta o gesto de "mãos ao alto" ou quedas bruscas.</td></tr>
+                        <tr><td>Alerta Sonoro Direto</td><td>Mini alto-falante piezoelétrico</td><td>Emite o aviso verbal de que a ação está sendo gravada e transmitida.</td></tr>
+                        <tr><td>Registro de Provas</td><td>Microcâmera HD + Microfone MEMS</td><td>Captura as evidências audiovisuais com clareza.</td></tr>
+                        <tr><td>Transmissão e Alerta</td><td>Wi-Fi/Bluetooth Low Energy (BLE)</td><td>Transmite os dados para a nuvem via celular e aciona o alerta comunitário.</td></tr>
+                        <tr><td>Geolocalização</td><td>Módulo GPS (Ex: NEO-6M)</td><td>Fornece a localização exata do incidente em tempo real.</td></tr>
+                        <tr><td>Fonte de Energia</td><td>Bateria de Polímero de Lítio (Li-Po)</td><td>Garante autonomia, otimizada para baixo consumo em stand-by.</td></tr>
+                    </tbody>
+                </table>
+            </section>
+            
+            <section id="parcerias" class="content-section">
+                <h2>🤝 6. Parcerias Estratégicas e Fomento</h2>
+                <h4>Desenvolvimento e Pesquisa</h4>
+                <p>Universidades (UFABC, USP, Unicamp, ITA) para colaboração técnica e pesquisa interdisciplinar (engenharia, direito, ciências sociais).</p>
+                <h4>Validação e Adoção</h4>
+                <p>Defensorias Públicas, ONGs de direitos humanos (Conectas, Instituto Sou da Paz) e coletivos de base comunitária para garantir que a solução atenda às necessidades reais.</p>
+                <h4>Viabilização Institucional</h4>
+                <p>Diálogo com a Secretaria de Segurança Pública de SP e Ministério da Justiça para apresentar a tecnologia como ferramenta de controle externo e proteção.</p>
+                <h4>Fomento e Incubação</h4>
+                <p>Submissão a editais de inovação social (FAPESP, Finep) e busca por incubadoras de tecnologia cívica (BrazilLab, Impact Hub).</p>
+            </section>
+
+            <section id="swot-analysis">
+    <h2><i class="fas fa-chart-pie"></i> Análise Estratégica SWOT</h2>
+    <div class="swot-quadrant-grid">
+        <div class="swot-card swot-strengths">
+            <h3><i class="fas fa-bolt"></i> Forças (Strengths)</h3>
+            <ul>
+                <li><strong>Elevada Relevância Social:</strong> Aborda um problema crítico e atual da sociedade brasileira.</li>
+                <li><strong>Dissuasão Imediata e Inovadora:</strong> O alerta sonoro é uma intervenção ativa que pode alterar a dinâmica de poder.</li>
+                            <li><strong>Ativação Híbrida e Robusta:</strong> A combinação de gatilhos manual e automático aumenta a chance de sucesso.</li>
+                            <li><strong>Produção de Provas Seguras:</strong> A transmissão em tempo real para a nuvem garante a integridade da prova.</li>
+                            <li><strong>Empoderamento do Cidadão:</strong> Oferece um meio de defesa em situações de assimetria de poder.</li>
+                        </ul>
+                    </div>
+                    <div class="swot-card swot-weaknesses">
+            <h3><i class="fas fa-exclamation-triangle"></i> Fraquezas (Weaknesses)</h3>
+                        <ul>
+                            <li><strong>Alta Complexidade Técnica:</strong> A miniaturização dos componentes é um desafio de engenharia significativo.</li>
+                            <li><strong>Autonomia da Bateria:</strong> Equilibrar longa duração e alto consumo na transmissão é um ponto crítico.</li>
+                            <li><strong>Dependência de Conectividade:</strong> A eficácia total depende de um sinal de internet móvel estável.</li>
+                            <li><strong>Custo e Acessibilidade:</strong> O preço final do dispositivo pode ser um obstáculo para o público-alvo.</li>
+                            <li><strong>Risco de Falsos Acionamentos:</strong> O gatilho automático por gesto pode ser ativado acidentalmente.</li>
+                        </ul>
+                    </div>
+                    <div class="swot-card swot-opportunities">
+            <h3><i class="fas fa-rocket"></i> Oportunidades (Opportunities)</h3>
+            <ul>
+                            <li><strong>Debate Público Aquecido:</strong> O tema da segurança e violência policial está em alta na mídia e sociedade.</li>
+                            <li><strong>Crescimento do Setor "Civic Tech":</strong> Ecossistema crescente de ONGs e investidores de impacto na área.</li>
+                            <li><strong>Fontes de Financiamento Específicas:</strong> Acesso a editais de justiça social e combate à violência de estado.</li>
+                            <li><strong>Alto Potencial de Visibilidade:</strong> A natureza disruptiva do projeto pode atrair grande atenção da imprensa.</li>
+                            <li><strong>Demanda por Controle Externo:</strong> A sociedade busca ferramentas de accountability da atividade policial.</li>
+                        </ul>
+                    </div>
+                    <div class="swot-card swot-threats">
+            <h3><i class="fas fa-shield-alt"></i> Ameaças (Threats)</h3>
+                        <ul>
+                            <li><strong>Forte Oposição Política:</strong> Pode ser visto como uma ferramenta "anti-polícia" por corporações e governos.</li>
+                            <li><strong>Implicações Legais e de Privacidade:</strong> O direito de gravar agentes públicos pode gerar contestações jurídicas.</li>
+                            <li><strong>Risco de Retaliação Contra o Usuário:</strong> Um agressor pode se tornar mais violento ao perceber o dispositivo.</li>
+                            <li><strong>Vulnerabilidade a Ataques Cibernéticos:</strong> A plataforma de dados é um alvo valioso para adulteração de evidências.</li>
+                            <li><strong>Desenvolvimento de Contramedidas:</strong> Possibilidade de surgimento de bloqueadores de sinal (jammers).</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="analise-estrategica" class="content-section">
+                <h2>📊 Análise Estratégica e Próximos Passos</h2>
+                <h4>Forças + Oportunidades</h4>
+                <p>A alta relevância social, combinada com o debate público aquecido, cria o cenário perfeito para buscar financiamento de fundações de direitos humanos e ganhar visibilidade na mídia, fortalecendo a legitimidade do projeto.</p>
+                <h4>Forças + Ameaças</h4>
+                <p>O sistema de provas seguras e irrefutáveis é a principal defesa contra a oposição institucional. A narrativa deve ser focada em "transparência e accountability", não em "vigilância da polícia", para mitigar a percepção negativa.</p>
+                <h4>Fraquezas + Oportunidades</h4>
+                <p>A complexidade técnica e o custo podem ser superados através de parcerias com o ecossistema de Civic Tech e laboratórios universitários, que podem oferecer expertise e recursos para otimizar o protótipo.</p>
+                <h4>Fraquezas + Ameaças</h4>
+                <p>O risco de retaliação (ameaça) é a consequência mais perigosa de uma falha de design (fraqueza). A prioridade máxima deve ser garantir que a operação seja discreta e segura. A dependência de conectividade exige um modo de gravação local robusto como backup.</p>
+            </section>
+
+        </main>
+    </div>
+</body>
+</html>
