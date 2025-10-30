@@ -182,6 +182,270 @@ body {
     color: var(--color-primary);
 }
 
+/* === MATRIZ SWOT - DESIGN FUTURISTA === */
+
+#swot-analysis {
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+    padding: 20px 0;
+}
+
+#swot-analysis h2 {
+    text-align: center;
+    font-size: 2.2em;
+    margin-bottom: 40px;
+    border-bottom: none;
+    justify-content: center;
+}
+
+.swot-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 25px;
+    max-width: 1000px;
+    margin: auto;
+    perspective: 1000px;
+}
+
+.swot-quadrant {
+    background: linear-gradient(135deg, var(--color-card-white) 0%, #f8f6fc 100%);
+    border-radius: var(--border-radius);
+    padding: 30px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--color-border);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    transform-style: preserve-3d;
+}
+
+.swot-quadrant::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    z-index: 2;
+}
+
+.swot-quadrant:hover {
+    transform: translateY(-8px) rotateX(5deg);
+    box-shadow: var(--shadow-hover);
+}
+
+.swot-quadrant h3 {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin: 0 0 20px 0;
+    display: flex;
+    align-items: center;
+    padding-bottom: 15px;
+    border-bottom: 2px solid;
+    position: relative;
+}
+
+.swot-quadrant h3 i {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+.swot-quadrant ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.swot-quadrant ul li {
+    position: relative;
+    padding: 12px 0 12px 35px;
+    margin-bottom: 10px;
+    border-radius: var(--border-radius-sm);
+    background: rgba(255, 255, 255, 0.7);
+    transition: var(--transition);
+}
+
+.swot-quadrant ul li:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: translateX(5px);
+}
+
+.swot-quadrant ul li::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+/* Quadrantes específicos - MANTENHA as classes que você já tem no HTML */
+.swot-strengths {
+    border-top: 5px solid var(--swot-green);
+}
+
+.swot-strengths h3 {
+    color: var(--swot-green);
+    border-bottom-color: rgba(16, 185, 129, 0.3);
+}
+
+.swot-strengths ul li::before {
+    background-color: var(--swot-green);
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+}
+
+.swot-weaknesses {
+    border-top: 5px solid var(--swot-orange);
+}
+
+.swot-weaknesses h3 {
+    color: var(--swot-orange);
+    border-bottom-color: rgba(245, 158, 11, 0.3);
+}
+
+.swot-weaknesses ul li::before {
+    background-color: var(--swot-orange);
+    box-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+}
+
+.swot-opportunities {
+    border-top: 5px solid var(--swot-blue);
+}
+
+.swot-opportunities h3 {
+    color: var(--swot-blue);
+    border-bottom-color: rgba(59, 130, 246, 0.3);
+}
+
+.swot-opportunities ul li::before {
+    background-color: var(--swot-blue);
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+
+.swot-threats {
+    border-top: 5px solid var(--swot-red);
+}
+
+.swot-threats h3 {
+    color: var(--swot-red);
+    border-bottom-color: rgba(239, 68, 68, 0.3);
+}
+
+.swot-threats ul li::before {
+    background-color: var(--swot-red);
+    box-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
+}
+
+/* ADICIONE também estas classes para compatibilidade com seu HTML atual */
+.swot-quadrant-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    max-width: 1000px;
+    margin: auto;
+    perspective: 1000px;
+}
+
+.swot-card {
+    background: linear-gradient(135deg, var(--color-card-white) 0%, #f8f6fc 100%);
+    border-radius: var(--border-radius);
+    padding: 30px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--color-border);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    transform-style: preserve-3d;
+}
+
+.swot-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    z-index: 2;
+}
+
+.swot-card:hover {
+    transform: translateY(-8px) rotateX(5deg);
+    box-shadow: var(--shadow-hover);
+}
+
+.swot-card h3 {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin: 0 0 20px 0;
+    display: flex;
+    align-items: center;
+    padding-bottom: 15px;
+    border-bottom: 2px solid;
+    position: relative;
+}
+
+.swot-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.swot-card ul li {
+    position: relative;
+    padding: 12px 0 12px 35px;
+    margin-bottom: 10px;
+    border-radius: var(--border-radius-sm);
+    background: rgba(255, 255, 255, 0.7);
+    transition: var(--transition);
+}
+
+.swot-card ul li:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: translateX(5px);
+}
+
+.swot-card ul li::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+/* Animações */
+.swot-quadrant, .swot-card {
+    animation: fadeIn 0.6s ease forwards;
+}
+
+.swot-strengths, .swot-card:nth-child(1) { animation-delay: 0.1s; }
+.swot-weaknesses, .swot-card:nth-child(2) { animation-delay: 0.2s; }
+.swot-opportunities, .swot-card:nth-child(3) { animation-delay: 0.3s; }
+.swot-threats, .swot-card:nth-child(4) { animation-delay: 0.4s; }
+
+/* Responsividade */
+@media (max-width: 900px) { 
+    .swot-container, .swot-quadrant-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .swot-quadrant, .swot-card {
+        padding: 20px 15px;
+    }
+    
+    .swot-quadrant h3, .swot-card h3 {
+        font-size: 1.3em;
+    }
+}
 /* --- ESTILOS DAS CAIXAS DA PÁGINA INDEX --- */
 #disciplina { 
     background: linear-gradient(135deg, var(--color-card-white) 0%, #f8f6fc 100%);
